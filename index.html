@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Abstract images</title>
+
+
+		<!-- Подключаем стили -->
+
+		<link rel="stylesheet" href="styles/style.css">
+
+
+
+
+		<!-- Подключаем библиотеки -->
+
+		<script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap-theme.min.css">
+		<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+
+
+
+
+		<!-- Подключаем скрипты -->
+
+		<script type="text/javascript" src="scripts/settings.js"></script>
+
+		<script type="text/javascript" src="scripts/tree.js"></script>
+		<script type="text/javascript" src="scripts/random.js"></script>
+		
+		<script type="text/javascript" src="scripts/init.js"></script>
+		<script type="text/javascript" src="scripts/genetic.js"></script>
+
+		<script type="text/javascript" src="scripts/image.js"></script>
+		<script type="text/javascript" src="scripts/draw.js"></script>
+
+		<script type="text/javascript" src="scripts/handle.js"></script>
+
+
+	</head>
+
+	<body>
+
+		<div class="modal fade" id="comand">
+
+			<div class="modal-dialog">
+
+				<div class="modal-content">
+
+
+					<div class="modal-body" align="center">
+
+						<div class="btn-group">
+
+							<button type="button" class="btn btn-default" data-dismiss="modal" id="fullscreen">
+								<span class="glyphicon glyphicon-fullscreen"></span>
+								Full screen
+							</button>
+
+							<button type="button" class="btn btn-default" data-dismiss="modal" id="showformula">
+								<span class="glyphicon glyphicon-stats"></span>
+								Show formula
+							</button>
+
+						</div>
+
+					</div>
+
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+
+		<div class="modal fade" id="modalWindow">
+
+			<div class="modal-dialog">
+
+				<div class="modal-content">
+
+
+					<div class="modal-header">
+
+						<h4 class="modal-title">Please wait</h4>
+
+					</div>
+
+
+					<div class="modal-body">
+
+						<div class="progress">
+							
+							<div class="progress-bar" role="progressBar" style="width: 100%"></div>
+						
+						</div>
+
+					</div>
+
+
+					<div class="modal-footer">
+
+						<button class="btn" id="openButton" data-dismiss="modal" data-loading-text="loading..." aria-hidden="true">Open image</button>
+
+					</div>
+
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+
+		<div class="modal fade" id="formula">
+
+			<div class="modal-dialog">
+
+				<div class="modal-content">
+
+
+					<div class="modal-header">
+
+						<h4 class="modal-title">Formula</h4>
+
+					</div>
+
+
+					<div class="modal-body" id="content">
+
+					</div>
+
+
+					<div class="modal-footer">
+
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+					</div>
+
+
+				</div>
+
+			</div>
+
+		</div>
+		
+
+	</body>
+
+</html>
