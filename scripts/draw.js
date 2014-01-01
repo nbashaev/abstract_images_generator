@@ -42,7 +42,6 @@ function drawImageOnCanvas(canvObj, matrix) {
 
 
 function drawImage(matrix, numOfCanvas) {
-
 	var canvObj = canvases[numOfCanvas];
 	drawImageOnCanvas(canvObj, matrix);
 
@@ -90,17 +89,10 @@ initFunc.unshift( function() {
 
 		canvas = document.createElement("canvas");
 		context = canvas.getContext("2d");
-
-
-		canvas.isVisible = true;
+		
 
 		canvas.width = WIDTH;
 		canvas.height = HEIGHT;
-
-
-
-		setHandlersToCanvas(canvas, i);
-
 
 		canvases.push({
 			canvas: canvas,
@@ -109,15 +101,28 @@ initFunc.unshift( function() {
 
 
 		$(container).append(canvas);
+		$(container).append($(
+            '<div class="control-buttons" id="controls' + i.toString() + '">' +
+                '<button type="button" class="btn btn-default btn-xs" id="fullscreen' + i.toString() + '" disabled>' +
+	                '<span class="glyphicon glyphicon-fullscreen"></span>' +
+	                'Full screen' +
+                '</button>' +
 
+                '<button type="button" class="btn btn-default btn-xs" id="showformula' + i.toString() + '" disabled>' +
+	                '<span class="glyphicon glyphicon-stats"></span>' +
+	                'Show formula' +
+                '</button>' +
+
+            '</div>'
+		));
+		
+		setHandlersToCanvas(canvas, i);
 	}
 
 
 
 	// Занимаемся вёрсткой
-
-	$(".container-column canvas").css("opacity", "0");
-
+	
 	$(".container-column").css("width", String(WIDTH_OF_COLUMN) + "%");
 	$(".container-column canvas").css("border", String(WIDTH_OF_BORDER) + "px" + " " + TYPE_OF_BORDER + " " + COLOR_OF_BORDER);
 

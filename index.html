@@ -45,115 +45,81 @@
 	</head>
 
 	<body>
-
-		<div class="modal fade" id="comand">
-
-			<div class="modal-dialog">
-
-				<div class="modal-content">
-
-
-					<div class="modal-body" align="center">
-
-						<div class="btn-group">
-
-							<button type="button" class="btn btn-default" data-dismiss="modal" id="fullscreen">
-								<span class="glyphicon glyphicon-fullscreen"></span>
-								Full screen
-							</button>
-
-							<button type="button" class="btn btn-default" data-dismiss="modal" id="showformula">
-								<span class="glyphicon glyphicon-stats"></span>
-								Show formula
-							</button>
-
-						</div>
-
-					</div>
-
-
-				</div>
-
-			</div>
-
+	    <img id="fullscreenImg" class="hidden-away"/>
+	
+	    <button type="button" class="btn btn-default btn-xs hidden-away">Holder</button>
+	    
+		<div id="pleasewait">
+		    Creating new generation, please wait...
 		</div>
 
-
-
-
 		<div class="modal fade" id="modalWindow">
-
 			<div class="modal-dialog">
-
 				<div class="modal-content">
-
-
+				
 					<div class="modal-header">
-
 						<h4 class="modal-title">Please wait</h4>
-
 					</div>
 
 
 					<div class="modal-body">
-
 						<div class="progress">
-							
 							<div class="progress-bar" role="progressBar" style="width: 100%"></div>
-						
 						</div>
-
 					</div>
-
 
 					<div class="modal-footer">
-
 						<button class="btn" id="openButton" data-dismiss="modal" data-loading-text="loading..." aria-hidden="true">Open image</button>
-
 					</div>
-
-
+					
 				</div>
-
 			</div>
-
 		</div>
 
 
 
 
 		<div class="modal fade" id="formula">
-
 			<div class="modal-dialog">
-
 				<div class="modal-content">
-
-
+				
 					<div class="modal-header">
-
 						<h4 class="modal-title">Formula</h4>
-
 					</div>
-
-
-					<div class="modal-body" id="content">
-
-					</div>
-
-
+					
+					<div class="modal-body" id="content"></div>
+					
 					<div class="modal-footer">
-
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
 					</div>
-
 
 				</div>
-
 			</div>
-
 		</div>
 		
+		<div class="modal fade" id="welcome">
+			<div class="modal-dialog">
+				<div class="modal-content">
+				
+					<div class="modal-header">
+						<h4 class="modal-title">Welcme to Genetic Abstract Images Generator!</h4>
+					</div>
+					
+					<div class="modal-body" id="content">
+					    <p>Click the images in order you like them (click the best one first), to choose it. Choose all of them to form a new generation.</p>
+					    
+					    <p>Добро пожаловать в генетический генератор абстрактных изображений! Выбирайте изображения в порядке привлекательности (лучшее - первым). Выберите все изображения, чтобы сфрмировать новое поколение.</p>
+					    
+					    <a src="https://github.com/nbashaev/Abstract">GitHub</a>
+					</div>
+					
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
 
 	</body>
 

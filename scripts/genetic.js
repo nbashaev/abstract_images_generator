@@ -326,7 +326,6 @@ function createNewGeneration() {
 			if (countOfImages == NUM_OF_IMAGES) {
 				
 				showCanvases();
-
 			}
 
 		});
@@ -336,17 +335,5 @@ function createNewGeneration() {
 
 
 	images = generation;
-
-}
-
-function showCanvases() {
-
-	var len = canvases.length;
-
-	for (var i = 0; i < len; i++) {
-		
-		canvases[i].canvas.isVisible = true;
-
-	}
 
 }

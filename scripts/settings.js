@@ -14,15 +14,18 @@ window.addEventListener("load", function() {
 
 	) / NUM_OF_IMAGES_IN_ROW;
 
-
+    console.log($(".btn-xs").height());
 	HEIGHT = (
 
 		$(window).height() -
 		3 * NUM_OF_ROWS * WIDTH_OF_MARGIN -
-		2 * WIDTH_OF_BORDER * NUM_OF_ROWS
-
+		2 * WIDTH_OF_BORDER * NUM_OF_ROWS -
+        3 * $(".btn-xs").height()
 	) / NUM_OF_ROWS;
 
+
+    $("#pleasewait").css("margin-top", String(-$("#pleasewait").height()/2) + "px");
+    $("#welcome").modal("show");
 });
 
 
@@ -113,7 +116,7 @@ var workers = [];
 
 for (var i = 0; i < NUM_OF_IMAGES; i++) {
 	
-	workers.push( new Worker("worker.js") );
+	workers.push( new Worker("/scripts/worker.js") );
 
 }
 
@@ -129,32 +132,6 @@ var BAD_COLOR = {
 	b: 200
 };
 
-
-
-// ---------------------------------------------------------------------------
-// ---------------- Убираем контекстное меню ---------------------------------
-// ---------------------------------------------------------------------------
-
-window.addEventListener("load", function() {
-
-	$("body").on("contextmenu", function(event) {
-
-		var thisType = event.target.toString();
-		var goodType = ( document.createElement("img") ).toString();
-		
-		if (thisType == goodType) {
-			
-			return true;
-
-		} else {
-
-			return false;
-
-		}
-
-	});
-
-});
 
 
 
