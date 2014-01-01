@@ -1,50 +1,28 @@
 function setHandlersToCanvas(canvas, numOfImage) {
-
-	canvas.addEventListener("click", function() {
-
-		if (canvas.isVisible) {
-
-
+    
+	$(canvas).click(function() {
+	    if ($(canvas).css('opacity') == 1){
 			$(canvas).fadeTo(100, 0);
-			canvas.isVisible = false;
-
+			$("#controls" + numOfImage.toString()).fadeTo(100, 0);
+			$("#controls" + numOfImage.toString() + " button").prop("disabled", true);
 			orderOfImages.push(numOfImage);
 
-
 			if (orderOfImages.length >= NUM_OF_IMAGES) {
-
+                $("#pleasewait").fadeTo(100, 1);
 				createNewGeneration();
 				orderOfImages = [];
-				
 			}
-
-
 		}
 
 	});
 
+    $("#fullscreen" + numOfImage.toString()).click(function() {
+        fullscreen(numOfImage);
+    });
 
-
-
-
-	canvas.addEventListener("contextmenu", function() {
-
-		$("#fullscreen").get(0).onclick = function() {
-
-			fullscreen(numOfImage);
-
-		};
-
-		$("#showformula").get(0).onclick = function() {
-
-			showFormula( createFormula( images[numOfImage].tree ) );
-
-		};
-
-		$('#comand').modal("show");
-
-	});
-
+    $("#showformula" + numOfImage.toString()).click(function() {
+        showFormula( createFormula( images[numOfImage].tree ) );
+    });  
 }
 
 
@@ -82,11 +60,20 @@ function showFormula(string) {
 
 }
 
-
-
-
-
-
+function requestFullScreen(element) {
+  if(element.requestFullScreen) {
+    element.requestFullScreen();
+    return true;
+  } else if(element.webkitRequestFullScreen ) {
+    element.webkitRequestFullScreen();
+    return true;
+  } else if(element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+    return true;
+  } else {
+    return false;
+  }
+}
 
 function fullscreen(numOfImage) {
 
@@ -148,30 +135,29 @@ function fullscreen(numOfImage) {
 
 		var url = canvas.toDataURL("image/png");
 
-		var img = document.createElement("img");
-		img.src = url;
+		$("#fullscreenImg").get(0).src = url;
 
 
-		$("#openButton").get(0).onclick = function() {
+		$("#openButton").click(function() {
 			
-			$("body").append(img);
-			document.documentElement.scrollTop = $("body").height();
+			if (!requestFullScreen($("#fullscreenImg").get(0))){
+			    alert("HTML5 FullScreen API is not supported, opening in new window.");
+			    window.open(url);
+		    }
 
-			$("html").get(0).onkeydown = function(event) {
-
-				if (event.keyCode == 27) {
-					
-					$(img).remove();
-
-				}
-
-			};
-
-		};
+		});
 
 		$("#modalWindow .progress").removeClass("progress-striped active");
 		$("#openButton").button("reset");
 
 	});
 
+}
+
+
+function showCanvases() {
+    $("#pleasewait").fadeTo(100, 0);
+    $(".container-column canvas").fadeTo(100, 1);
+    $(".control-buttons").fadeTo(100, 1);
+    $(".control-buttons button").prop("disabled", false);
 }

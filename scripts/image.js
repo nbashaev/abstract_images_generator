@@ -56,12 +56,6 @@ function addImage(array, imageData, index) {
 	var canvObj = canvases[index];
 	var canvas = canvObj.canvas;
 
-
 	array[index] = imageData;
-
-
 	drawImageOnCanvas(canvObj, imageData.matrix);
-
-	$(canvas).css("opacity", 1);
-
 }

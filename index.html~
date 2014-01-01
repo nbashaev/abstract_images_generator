@@ -108,9 +108,10 @@
 					<div class="modal-body" id="content">
 					    <p>Click the images in order you like them (click the best one first), to choose it. Choose all of them to form a new generation.</p>
 					    
-					    <p>Добро пожаловать в генетический генератор абстрактных изображений! Выбирайте изображения в порядке привлекательности (лучшее - первым). Выберите все изображения, чтобы сфрмировать новое поколение.</p>
+					    <p>Выбирайте изображения в порядке привлекательности (лучшее - первым). Выберите все изображения, чтобы сфрмировать новое поколение.</p>
 					    
 					    <a src="https://github.com/nbashaev/Abstract">GitHub</a>
+					    
 					</div>
 					
 					<div class="modal-footer">
